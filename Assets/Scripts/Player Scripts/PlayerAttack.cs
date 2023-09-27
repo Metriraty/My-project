@@ -70,6 +70,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (current_Combo_State == ComboState.Kick_2 ||
                 current_Combo_State == ComboState.Punch_3) return;
+
             if (current_Combo_State == ComboState.None ||
                 current_Combo_State == ComboState.Punch_1 ||
                 current_Combo_State == ComboState.Punch_2)
@@ -80,6 +81,19 @@ public class PlayerAttack : MonoBehaviour
             {
                 current_Combo_State++;
             }
+
+            activateTimerToReset = true;
+            current_Combo_Timer = default_Combo_Timer;
+
+            if (current_Combo_State == ComboState.Kick_1)
+            {
+                player_Anim.Kick_1();
+            }
+            if (current_Combo_State == ComboState.Kick_2)
+            {
+                player_Anim.Kick_2();
+            }
+
         }
 
     }
@@ -89,7 +103,7 @@ public class PlayerAttack : MonoBehaviour
         if (activateTimerToReset)
         {
             current_Combo_Timer -= Time.deltaTime;
-            if(current_Combo_Timer < 0f) 
+            if(current_Combo_Timer <= 0f) 
             {
                 current_Combo_State = ComboState.None;
                 activateTimerToReset = false;
