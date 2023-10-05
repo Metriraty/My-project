@@ -52,4 +52,26 @@ public class CharacterAnimation : MonoBehaviour
             anim.SetTrigger(AnimationTags.ATTACK_3_TRIGGER);
         }
     }
+    public void Play_IdleAnimation()
+    {
+        anim.Play(AnimationTags.IDLE_ANIMATION);
+    }
+    public void KnockDown()
+    {
+        anim.SetTrigger(AnimationTags.KNOCK_DOWN_TRIGGER);
+    }
+    public void StandUp()
+    {
+        anim.SetTrigger(AnimationTags.STAND_UP_TRIGGER);
+    }
+    public void Hit()
+    {
+        anim.SetTrigger(AnimationTags.HIT_TRIGGER);
+    }
+    public void Death()
+    {
+        anim.SetTrigger(AnimationTags.DEATH_TRIGGER);
+    }
+
+
 }
