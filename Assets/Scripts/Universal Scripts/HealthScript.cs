@@ -50,7 +50,8 @@ public class HealthScript : MonoBehaviour
         if (health <= 0f)
         {
             animationScript.Death();
-            characterDied = true; 
+            characterDied = true;
+            Destroy(gameObject, 3f);
         
 
             if (is_Player)

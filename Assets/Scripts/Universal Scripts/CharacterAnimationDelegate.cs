@@ -156,12 +156,13 @@ public class CharacterAnimationDelegate : MonoBehaviour
     }
     void CharacterDied()
     {
-        Invoke("DeactivateGameObject", 2f);
+        Invoke("DeactivateGameObject", 0.5f);
+        
     }
     void DeactivateGameObject()
     {
         EnemySpawner.Instance.SpawnEnemy();
-        gameObject.SetActive(false);
+        
 
     }
 
